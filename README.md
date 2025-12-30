@@ -1,48 +1,63 @@
-# Deprecated
-The concept of this project is the same as lein-lambda.
-I think it is better to use that project.
-
 # lambda-clojure-helper
 
-FIXME: description
+A Leiningen plugin for deploying Clojure functions to AWS Lambda.
+
+## Deprecation Notice
+
+This project is deprecated. The functionality provided here overlaps significantly with [lein-lambda](https://github.com/paulbutcher/lein-lambda), which offers a more comprehensive and actively maintained solution for AWS Lambda deployment. Users are encouraged to migrate to that project.
+
+## Overview
+
+lambda-clojure-helper was designed to simplify the deployment workflow for Clojure applications targeting AWS Lambda. It provides a command-line interface through Leiningen for managing Lambda function deployments.
+
+### Features
+
+- Deploy Clojure functions to AWS Lambda
+- Configuration-based deployment workflow
+- Integration with AWS CLI tooling
 
 ## Installation
 
-Download from http://example.com/FIXME.
+Add the following dependency to your `project.clj`:
+
+```clojure
+:plugins [[com.conao3/lambda-clojure-helper "0.0.2"]]
+```
 
 ## Usage
 
-FIXME: explanation
+```bash
+lein lambda <action> [options]
+```
 
-    $ java -jar lambda-clojure-helper-0.1.0-standalone.jar [args]
+### Available Actions
 
-## Options
+| Action | Description |
+|--------|-------------|
+| `echo` | System command execution test |
+| `show-config` | Display current configuration |
+| `dryrun` | Preview deployment without executing |
+| `deploy` | Deploy functions to AWS Lambda |
 
-FIXME: listing of options this app accepts.
+### Options
 
-## Examples
+| Option | Description |
+|--------|-------------|
+| `-v, --verbose` | Show debug messages |
+| `-h, --help` | Display help information |
 
-...
+## Configuration
 
-### Bugs
+Create a configuration file at `resources/lambda-clojure-helper-config.edn` to define your deployment settings.
 
-...
+## Requirements
 
-### Any Other Sections
-### That You Think
-### Might be Useful
+- Leiningen
+- AWS CLI configured with appropriate credentials
+- Clojure 1.9.0 or later
 
 ## License
 
-Copyright © 2019 FIXME
+Copyright 2019 conao3
 
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
-
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+This program is available under the GNU Affero General Public License version 3 or later. See the [AGPL-3.0 License](https://www.gnu.org/licenses/agpl-3.0.html) for details.
